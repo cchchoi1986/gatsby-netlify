@@ -5,25 +5,83 @@ backend:
 media_folder: static/assets
 
 collections:
+  - name: page
+    label: Page
+    folder: static/page
+    create: true
+    fields:
+      - name: Page
+        label: page
+        widget: string
+      - name: content
+        label: Content
+        widget: list
+        fields:
+          - label: Banner(s)
+            name: banners
+            widget: relation
+            collection: banners
+            searchFields: ["title"]
+            valueField: banners
+            fields:
+              - label: Order
+                name: order
+                widget: number
+
   - name: blog
     label: Blog
-    folder: blog
+    folder: static/blog
     create: true
     fields:
-      - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
+      - label: Title
+        name: title
+        widget: object
+        fields:
+          - name: english
+            label: English
+            widget: string
+          - name: french
+            label: French
+            widget: string
+          - name: spanish
+            label: Spanish
+            widget: string
+      - label: Subtitle
+        name: subtitle
+        widget: object
+        fields:
+          - name: english
+            label: English
+            widget: string
+          - name: french
+            label: French
+            widget: string
+          - name: spanish
+            label: Spanish
+            widget: string
+      - label: Description
+        name: description
+        widget: object
+        fields:
+          - name: english
+            label: English
+            widget: string
+          - name: french
+            label: French
+            widget: string
+          - name: spanish
+            label: Spanish
+            widget: string
+      - label: Link
+        name: link
+        widget: string
+
   - name: banner
     label: Banner
-    folder: banner
+    folder: static/banner
     create: true
     fields:
-      - label: Image
-        name: image
-        widget: relation
-        collection: images
-        searchFields: ["filename", "type"]
-        valueField: image
       - label: "Featured Image"
         name: "image"
         widget: "image"
