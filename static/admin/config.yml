@@ -7,7 +7,7 @@ media_folder: static/assets
 collections:
   - name: page
     label: Page
-    folder: static/page
+    folder: page
     create: true
     fields:
       - name: Page
@@ -30,7 +30,7 @@ collections:
 
   - name: blog
     label: Blog
-    folder: static/blog
+    folder: blog
     create: true
     fields:
       - { name: date, label: Date, widget: date }
@@ -79,7 +79,7 @@ collections:
 
   - name: banner
     label: Banner
-    folder: static/banner
+    folder: banner
     create: true
     fields:
       - label: "Featured Image"
