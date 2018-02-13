@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: cchchoi1986/gatsby-netlify
+
+media_folder: static/assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+  - name: banner
+    label: Banner
+    folder: banner
+    create: true
+    fields:
+      - label: Image
+        name: image
+        widget: relation
+        collection: images
+        searchFields: ["filename", "type"]
+        valueField: image
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+      - label: Title
+        name: title
+        widget: object
+        fields:
+          - name: english
+            label: English
+            widget: string
+          - name: french
+            label: French
+            widget: string
+          - name: spanish
+            label: Spanish
+            widget: string
+      - label: Subtitle
+        name: subtitle
+        widget: object
+        fields:
+          - name: english
+            label: English
+            widget: string
+          - name: french
+            label: French
+            widget: string
+          - name: spanish
+            label: Spanish
+            widget: string
+      - label: Description
+        name: description
+        widget: object
+        fields:
+          - name: english
+            label: English
+            widget: string
+          - name: french
+            label: French
+            widget: string
+          - name: spanish
+            label: Spanish
+            widget: string
+      - label: Link
+        name: link
+        widget: string
